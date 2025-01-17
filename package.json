@@ -35,6 +35,20 @@
     "onStartupFinished"
   ],
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "simon-code-runner",
+      "properties": {
+        "simon-code-runner.runEnv": {
+          "type": "object",
+          "default": {
+            "js": "bun",
+            "ts": "bun"
+          },
+          "description": "The command to run the file in terminal"
+        }
+      }
+    },
     "commands": [
       {
         "command": "simon-code-runner.runFileInTerminal",
