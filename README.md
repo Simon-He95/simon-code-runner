@@ -1,5 +1,5 @@
 <p align="center">
-<img height="200" src="./assets/kv.png" alt="vscode starter">
+<img height="200" src="./icon.png" alt="vscode starter">
 </p>
 <p align="center"> English | <a href="./README_zh.md">简体中文</a></p>
 
