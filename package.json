@@ -2,7 +2,7 @@
   "publisher": "simonhe",
   "name": "simon-code-runner",
   "displayName": "simon-code-runner",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A VS Code extension to run JavaScript and TypeScript files using bun.",
   "author": "Simon He",
   "license": "MIT",
