@@ -1,15 +1,15 @@
 import { createExtension, createTerminal, getConfiguration, registerCommand } from '@vscode-use/utils'
 
 export = createExtension(async () => {
-  let terminal: any
   registerCommand('simon-code-runner.runFileInTerminal', (e) => {
     const path = e.path
     if (!path)
       return
     const { js, ts } = getConfiguration('simon-code-runner.runEnv')
-    if (!terminal)
-      terminal = createTerminal('Code')
 
+    const terminal = getTerminal()
+
+    terminal.sendText('clear')
     if (path.endsWith('.ts')) {
       terminal.sendText(`${ts} ${path}`)
     }
@@ -18,4 +18,21 @@ export = createExtension(async () => {
     }
     terminal.show()
   })
-})
+}, () => disposeTerminal())
+
+let terminal: any
+
+function getTerminal() {
+  if (terminal) {
+    if (!terminal.exitStatus)
+      return terminal
+    terminal.dispose()
+  }
+
+  terminal = createTerminal('Code')
+  return terminal
+}
+
+function disposeTerminal() {
+  terminal.dispose()
+}
