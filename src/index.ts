@@ -34,5 +34,5 @@ function getTerminal() {
 }
 
 function disposeTerminal() {
-  terminal.dispose()
+  terminal && terminal.dispose()
 }
